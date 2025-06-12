@@ -11,8 +11,10 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Dimensions } from 'react-native';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import type { RootStackParamList } from '../../navigation/types';
 
-export default function WelcomeScreen({ navigation }: any) {
+export default function WelcomeScreen({ navigation }: { navigation: NativeStackNavigationProp<RootStackParamList, 'Welcome'> }) {
     const screenHeight = Dimensions.get('window').height;
     const insets = useSafeAreaInsets();
     const buttonOpacity = useRef(new Animated.Value(0)).current;
